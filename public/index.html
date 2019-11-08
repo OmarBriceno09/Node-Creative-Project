@@ -1,9 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="stylesheet" href="stylesheets/style.css" />
+        <meta charset="utf-8" />
         <title>Node Creative Project</title>
     </head>
-    <body>
-        <h1>Hello!</h1>
-    </body>
+
+<body>
+  <div id="app">
+    <h1 align="center">What day was that Holiday?</h1>
+    <h3>Ever just sit down and wonder what day was that holiday specifically
+    in 2018? ... Well now you can figure it out with the click of a mouse!</h3>
+      <form v-on:submit.prevent="holidayREST">
+        <input type="text" v-model="holiday">
+        <input type="submit" name="submit">
+      </form>
+      <div style="margin-left:20px;">
+        <div v-for="day in the_holidays">
+            <hr>
+            <h1>{{day.name}}</h1>
+            <h2 style="margin-left: 20px">This day was a {{day.day_of_week}}</h2>
+            <h3 style="margin-left: 20px">{{day.date}}</h3>
+        </div>
+      </div>
+  </div>
+  <footer>
+       <hr>
+      <a href="https://github.com/OmarBriceno09/Node-Creative-Project" id = "ghub-link">
+              <b>Gitub</b></a>
+    </footer>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+  <script src="javascripts/script.js"></script>
+</body>
+
 </html>
